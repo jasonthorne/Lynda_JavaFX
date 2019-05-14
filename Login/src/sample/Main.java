@@ -62,15 +62,15 @@ public class Main extends Application {
 
         //===action event for button (using lambda expression):
         button.setOnAction(event -> {
-
             actionTarget.setText("Sign in button pressed"); //set text
             actionTarget.setFill(Color.BLUEVIOLET); //change the colour of display text
-
         });
 
         //===create scene and stage, and show stage:
         primaryStage.setTitle("Java FX Login Form");
-        primaryStage.setScene(new Scene(grid, 300, 275)); //add grid to scene, then scene to stage.
+        Scene scene = new Scene(grid, 300, 275); //create scene, and add grid to scene
+        scene.getStylesheets().add(Main.class.getResource("Login.css").toExternalForm()); //linking stylesheet to scene +++++++++++
+        primaryStage.setScene(scene); //add scene to stage
         primaryStage.show();
     }
 
