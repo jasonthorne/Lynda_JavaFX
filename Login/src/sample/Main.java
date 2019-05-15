@@ -47,7 +47,7 @@ public class Main extends Application {
         grid.add(passwordLbl, 0,2);
         grid.add(passwordField, 1,2);
 
-        //grid.setGridLinesVisible(true);//make gridlines visible
+        grid.setGridLinesVisible(true);//make gridlines visible
 
         //===grid button:
         Button button = new Button("Sign in");
