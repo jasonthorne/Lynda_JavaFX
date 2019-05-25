@@ -14,9 +14,22 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
-			Scene scene = new Scene(root,400,450);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			//create BorderPane:
+			BorderPane pane = new BorderPane(); //(BorderPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+			
+			//Add boxes with strings to each section of the BorderPane:
+			pane.setTop(addHBox("Top")); //add a Hbox with string to the top section of the BorderPane
+			pane.setLeft(addVBox("Left")); //add a Vbox with string to the top section of the BorderPane
+			pane.setRight(addVBox("Right")); //add a Vbox with string to the top section of the BorderPane
+			pane.setBottom(addHBox("Bottom")); //add a Hbox with string to the top section of the BorderPane
+			
+			
+			Scene scene = new Scene(pane,400,450);
+			
+			//added styling to H & V boxes in stylesheet below ++++++++
+			scene.getStylesheets().add(getClass().getResource("textStyle.css").toExternalForm());
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
