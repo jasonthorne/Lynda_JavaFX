@@ -2,13 +2,16 @@ package application;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.PerspectiveTransform;
 import javafx.scene.effect.Reflection;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -28,7 +31,7 @@ public class Main extends Application {
 			
 			
 			//create and add text effect node objects to root (VBox):
-			root.getChildren().addAll(makeDropShadow(), makeReflection());
+			root.getChildren().addAll(makePerspective(), makeDropShadow(), makeReflection());
 			
 			
 			
@@ -87,7 +90,48 @@ public class Main extends Application {
 	}
 	
 	
-	
+	static Node makePerspective() {
+		
+		//create a group obj:
+		Group group = new Group();
+		
+		//create a PerspectiveTransform obj:
+		PerspectiveTransform perspectiveTransform = new PerspectiveTransform();
+		//set coords:
+		perspectiveTransform.setUlx(10.0f);
+		perspectiveTransform.setUly(10.0f);
+		perspectiveTransform.setUrx(210.0f);
+		perspectiveTransform.setUry(40.0f);
+		perspectiveTransform.setLrx(210.0f);
+		perspectiveTransform.setLry(60.0f);
+		perspectiveTransform.setLlx(10.0f);
+		perspectiveTransform.setLly(90.0f);
+		
+		//set the perspective effect to the group:
+		group.setEffect(perspectiveTransform);
+		group.setCache(true); //cache the node as a bitmap for increased rendering performance +++++++++
+		
+		//create rectangle:
+		Rectangle rectangle = new Rectangle();
+		rectangle.setX(10.0f);
+		rectangle.setY(10.0f);
+		rectangle.setWidth(280.0f);
+		rectangle.setHeight(80.0f);
+		rectangle.setFill(Color.DODGERBLUE);
+		
+		//create text:
+		Text text = new Text();
+		text.setX(20.0f);
+		text.setY(65.0f);
+		text.setText("Perspective effect");
+		text.setFill(Color.WHITE);
+		text.setFont(Font.font("null", FontWeight.BOLD, 36)); //font family is set to null, 32 is for size (in px) ++++++++++
+
+		//add rectangle and text to group (which has been given the perspective transform effect)
+		group.getChildren().addAll(rectangle, text);
+		
+		return group; //return group node
+	}
 	
 	public static void main(String[] args) {
 		launch(args);
