@@ -1,11 +1,14 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
@@ -48,9 +51,54 @@ public class Main extends Application {
 			Button submit = new Button("Submit");
 			Button clear = new Button("Clear");
 			
+			//add a drop shadow effect:
+			DropShadow shadow = new DropShadow();
+			
 			//label for confirmation message:
 			Label lblResponse = new Label();
 			
+			//+++++++++++++++++++++++++++++++++++++++++++++++
+			//attach an event handler to the submit button for a hover effect: 
+			submit.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) ->{
+				submit.setEffect(shadow);
+			});
+			
+			//attach a 'mouse exited' event handler, to remove the drop shadow effect:
+			submit.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) ->{
+				submit.setEffect(null);
+			});
+			
+			//make same event handlers for clear button:
+			clear.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) ->{
+				clear.setEffect(shadow);
+			});
+			
+			clear.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) ->{
+				clear.setEffect(null);
+			});
+			
+			
+			//click event for when the user submits a comment:
+			submit.setOnAction((ActionEvent e) ->{
+				
+				//check that a comment was entered:
+				if(comment.getText()!=null && !comment.getText().isEmpty()) {
+					lblResponse.setText(userName.getText() + " " + "Thanks for your comment :)");
+				}else {
+					lblResponse.setText("You haven't left a comment :(");
+				}
+			});
+			
+			//click event for when the user clicks clear button:
+			clear.setOnAction((ActionEvent e) ->{
+				userName.clear();
+				comment.clear();
+				lblResponse.setText(null);
+			});
+			
+			//+++++++++++++++++++++++++++++++++++++++++++++++
+			
+	
 			//add elements to root:
 			root.add(title, 0,0,2,1); //SPANNING AN ELEMENT: col 0, row 0, span 2 cols, span 1 row. ++++++++++++++++++++++++++++++
 			root.add(hb, 0,1);
