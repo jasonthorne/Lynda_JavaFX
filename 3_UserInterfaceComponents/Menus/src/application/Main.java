@@ -16,14 +16,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			
 			BorderPane root = new BorderPane(); 
-			Scene scene = new Scene(root,400,400, Color.WHITE);
 			
 			//================
 			//create a MenuBar (to add a menu to):
 			MenuBar menuBar = new MenuBar();
 			menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
-			root.setTop(menuBar); //add menubar to top of root ++++++++++++++
 			
 			//create a menu (to add menu items to)
 			Menu fileMenu = new Menu("File");
@@ -36,7 +35,12 @@ public class Main extends Application {
 			//add menu items to menu:
 			fileMenu.getItems().addAll(newMenuItem, saveMenuItem, new SeparatorMenuItem(), exitMenuItem);
 			
+			//add menu to menuBar:
+			menuBar.getMenus().add(fileMenu);
 			
+			root.setTop(menuBar); //add menubar to top of root ++++++++++++++
+			
+			Scene scene = new Scene(root,400,400, Color.WHITE);
 			//=================
 			
 			
