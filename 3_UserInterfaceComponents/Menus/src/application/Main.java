@@ -80,7 +80,7 @@ public class Main extends Application {
 			//add menus to menuBar - '.add()' if only adding one menu to menuBar:
 			menuBar.getMenus().addAll(fileMenu, languageMenu);
 			
-			root.setTop(menuBar); //add menubar to top of root ++++++++++++++
+			root.setTop(menuBar); //add menubar to top of root (invoke menuBar making method here!)++++++++++++++
 			
 			Scene scene = new Scene(root,400,400, Color.WHITE);
 			//=================
