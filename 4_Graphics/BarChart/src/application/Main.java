@@ -20,6 +20,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			
+			//Change to other inbuilt styleSheet (default one is MODENA):
+			//setUserAgentStylesheet(STYLESHEET_CASPIAN);
 			
 			//===============
 			//Taken from: https://www.tutorialspoint.com/javafx/bar_chart.htm

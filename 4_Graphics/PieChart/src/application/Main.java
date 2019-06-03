@@ -18,6 +18,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			
+			//Change to other inbuilt styleSheet (default one is MODENA):
+			//setUserAgentStylesheet(STYLESHEET_CASPIAN);
+			
 			FlowPane root = new FlowPane();
 			
 			//====================
