@@ -19,15 +19,19 @@ public class FluentBMI{
 		bmi.bind(weight.multiply(703).divide(height.multiply(height))); //bmi = (weight * 703)/(height * height)
 		
 		//-------------
-		//take in two numbers from user to calc bmi:
+		//take in two numbers from user to calc bmi (twice due to loop):
 		Scanner input = new Scanner(System.in); //create scanner obj
 		
-		System.out.println("Enter weight in pounds: ");
-		weight.set(input.nextInt()); //receive weight val
-		System.out.println("Enter height in inches: ");
-		height.set(input.nextInt()); //receive height val
-		
-		System.out.println("BMI is: " + bmi.get()); //show results
+		for (int i=0;i<2;i++) {
+			
+			System.out.println("Enter weight in pounds: ");
+			weight.set(input.nextInt()); //receive weight val
+			System.out.println("Enter height in inches: ");
+			height.set(input.nextInt()); //receive height val
+			
+			System.out.println("BMI is: " + bmi.get()); //show results
+			System.out.println("****************");
+		}
 		
 		input.close(); //CLOSE SCANNER - important! 
 	}
