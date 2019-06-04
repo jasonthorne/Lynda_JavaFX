@@ -15,7 +15,7 @@ public class LowLevelBindingExample{
 		
 		//initialisation block for declaring computeValue()'s dependencies:
 		{
-			super.bind(squareSide); //only dependency is 'squareSide'
+			super.bind(squareSide); //binding 'squareSide'as a dependency
 		}
 
 		//is an interface, so implemented method needs overridden: 
