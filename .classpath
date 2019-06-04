@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="1_SampleApplications/AskAQuestionChallenge/src"/>
+	<classpathentry kind="src" path="1_SampleApplications/HelloWorld/src"/>
+	<classpathentry kind="src" path="1_SampleApplications/Login/src"/>
+	<classpathentry kind="src" path="1_SampleApplications/LoginWithFXML/src"/>
+	<classpathentry kind="src" path="2_Drawing/AddTextWithStyle/src"/>
+	<classpathentry kind="src" path="2_Drawing/BlendedShapes/src"/>
+	<classpathentry kind="src" path="2_Drawing/Playground/src"/>
+	<classpathentry kind="src" path="2_Drawing/TextEffects/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/ListView/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/Menus/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/TableView/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/UIControlHandlers/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/UIControls/src"/>
+	<classpathentry kind="src" path="3_UserInterfaceComponents/UILayout/src"/>
+	<classpathentry kind="src" path="4_Graphics/AddImage/src"/>
+	<classpathentry kind="src" path="4_Graphics/BarChart/src"/>
+	<classpathentry kind="src" path="4_Graphics/PieChart/src"/>
+	<classpathentry kind="src" path="4_Graphics/RotateButton/src"/>
+	<classpathentry kind="src" path="5_CustomUIs/StyleChallenge/src"/>
+	<classpathentry kind="src" path="5_CustomUIs/StyleRules/src"/>
+	<classpathentry kind="src" path="5_CustomUIs/StyleSheets/src"/>
+	<classpathentry kind="output" path="1_SampleApplications/HelloWorld/out/production/HelloWorld"/>
+</classpath>
